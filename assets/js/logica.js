@@ -23,9 +23,7 @@ const consumirAPIStarWarsCompleta = ()=>{
     let url = `https://swapi.dev/api/people/`;
     fetch(url)
         .then( (respuesta)=>{
-            // respuesta cruda de la API -raw-
             console.log(respuesta);
-            // transformamos la respuesta cruda en un objeto legible por JS
             respuesta.json()
                     .then( (objJsonRespuesta)=>{
                         console.log(objJsonRespuesta);
@@ -75,7 +73,7 @@ const consumirAPIStarWars = (contador, color)=>{
                                 
 
                             let contenidoCard = `
-                                                    <div class="card" style="width: 18rem;">
+                                                    <div class="card m-2" style="width: 18rem;">
                                                         <div class="card-body">
                                                         <h5 class="card-title" id="txtNombre"><div class=${laClaseCirculo}></div>  ${objJsonRespuesta.name} </h5>
                                                         <div class="container">
@@ -144,7 +142,7 @@ function* crearCardPopulares(){
 
 function* crearCardSecundarios(){
 
-    while( contadorSecundarios<=11){
+    while( contadorSecundarios<=10){
 
         consumirAPIStarWars(contadorSecundarios, 'verde');
 
@@ -156,7 +154,7 @@ function* crearCardSecundarios(){
 
 function* crearCardOtros(){
 
-    while( contadorOtros<=17){
+    while( contadorOtros<=16){
 
         consumirAPIStarWars(contadorOtros, 'azul');
 
